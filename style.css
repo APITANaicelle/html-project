@@ -1,0 +1,49 @@
+h1{
+    color: #CB80AB;
+    font: bold;
+    font-size:xx-large;
+    font-weight: 900;
+
+}
+h1:hover{
+        color: white;
+}
+h2{
+    color: #A594F9;
+}
+h2:hover{
+    color: white;
+}
+h3{
+ color:#C7B7A3;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+p{
+    font-weight:normal;
+}
+img{
+    height: 200px;
+     width: 500px;
+     border: 5px solid #758694;
+}
+
+ul{
+    color:#CB6040 ;
+    font-weight: 700;
+}
+ol{
+    color:#A67B5B;
+    font-weight: 700;
+}
+*{
+    background-color: #F7EFE5;
+}
+#note{
+    color: #C96868;
+}
+
