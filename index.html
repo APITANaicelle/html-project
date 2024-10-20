@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./Images/favicon (1).ico" type="image/x-icon">
+    <style>
+      .libre-baskerville-regular {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 400;
+        font-style: normal;
+       }
+       h1:hover{
+          color: white;
+       }
+       img{
+          height: 450px;
+          width: 500px;
+          border: 5px solid white;
+          margin-left: 30px;
+          transition: opacity 0.3s
+       }
+       img:hover{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 450px; 
+            margin-top: 40px; 
+        }
+        .image {
+            position: relative;
+            display: inline-block;
+        }
+        .image .hover-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            z-index: -1; 
+        }
+        .image:hover .main-img {
+            opacity: 0;
+        }
+        .image:hover .hover-img {
+            opacity: 1;
+            z-index: 1;
+        }
+       *{
+          background-color: #D4BDAC;
+       }
+    </style>
+</head>
+<body>
+ <div class="libre-baskerville-regular">
+    <h1>Welcome to My Page: A Glimpse into My Life</h1>
+    <p>"Life is a collection of moments, each one shaping who we are and who aspire to be."</p>
+  <ul>
+    <!--Link to the "Moments in every picture" page, It displays memorable moments in each image.  -->
+    <li><a href="./moments.html">Moments in every picture</a></li> <br>
+     <!-- Link to the "My thoughts" page --> 
+    <li><a href="./self.html">My self</a></li> <br>
+    <!-- Link to the "My Hobbies" page -->
+  <div>
+  <div class="image">
+    <li><a href="./hobbies.html">My Hobbies</a></li> <br>
+    <img class="main-img" src="Images/capture.jpg" alt="featured">
+    <img class="hover-img" src="./Images/beach.jpg" alt="hover">
+  </ul> 
+  </div>
+</body>
+</html>
