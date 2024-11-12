@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes</title>
+    <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        h1:hover {
+            color: pink;
+        }
+        header {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .logo-button img {
+            height: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-radius: 50px;
+        }
+        .logo-button img:hover {
+            transform: scale(1.1); 
+        }
+        .nav-button {
+            margin: 0 10px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            padding: 8px 15px; 
+            transition: background 0.3s, color 0.3s;
+            border-radius: 6px;
+        }
+        .nav-button:hover,
+        .nav-button:active {
+            background-color: #333; 
+            color: #fff; 
+        }
+        .main {
+            display: flex;
+            width: 80%;
+            margin-top: 20px;
+        }
+        .text-section {
+            flex: 1;
+            padding: 20px;
+        }
+        .image-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-section img {
+            max-width: 100%;
+            border-radius: 50px;
+            margin-top: -30px;
+        }
+        .explore-button {
+            padding: 10px 20px; 
+            background-color: red; 
+            color: white; 
+            border: none; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-size: 1em; 
+            transition: background-color 0.3s; /* Transition for hover effect */
+            margin-top: 15px; 
+        }
+        .explore-button:hover {
+            background-color: darkred; 
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="./index.html" class="logo-button">
+        <img src="./Images/logo.jpg" alt="Logo">
+    </a>
+    <nav>
+        <a href="./index.html" class="nav-button">Home</a>
+        <a href="./content.html" class="nav-button">Content</a>
+        <a href="./contact.html" class="nav-button">Contact</a>
+    </nav>
+</header>
+
+<div class="main">
+    <div class="text-section">
+        <h1>Hello!</h1>
+        <h2>I'm Aicelle Apitan</h2>
+        <p>Discover my hobbies, memorable experiences,<br> and reflections on life's journey.</p>
+        <button class="explore-button" onclick="location.href='content.html'">Explore</button> <!-- Added button -->
+    </div>
+    <div class="image-section">
+        <img src="./Images/ikaw.jfif" alt="Aicelle Apitan">
+    </div>
+</div>
+
+</body>
+</html>
+

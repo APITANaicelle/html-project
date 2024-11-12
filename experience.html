@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences</title>
+    <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff; 
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
+        }
+
+        header {
+            position: relative;
+            padding: 20px;
+            text-align: center; 
+        }
+
+        .logo {
+            position: absolute; 
+            top: 10px;
+            left: 50px; 
+            height: 50px; 
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            padding: 10px;
+        }
+
+        .logo:hover {
+            transform: scale(1.1); 
+        }
+
+        h1, h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-top: 40px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-grow: 1; 
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .card-content p:first-of-type {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .card-content blockquote {
+            font-style: italic;
+            color: #888;
+            margin: 20px 0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            margin-top: auto; 
+        }
+        .back-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html"><img src="Images/logo.jpg" alt="Logo" class="logo"></a>
+        <h3>Life unfolds in moments, and each picture we capture is a timeless treasure of memories.</h3>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <img src="Images/cheerdance.jpg" alt="Cheerdance">
+            <div class="card-content">
+                <p>Cheer Dance</p>
+                <blockquote>"This is our cheer dance. We were nervous, but we gave it our best and won. All the hard work paid off!"</blockquote>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Images/friends.jpg" alt="Bestfriend">
+            <div class="card-content">
+                <p>Bestfriend</p>
+                <blockquote>"Our friendship started in grade 11, and though we were no longer classmates in grade 12, we stayed close."</blockquote>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Images/bday.jpg" alt="Birthday">
+            <div class="card-content">
+                <p>Birthday</p>
+                <blockquote>"For the first time, I was invited to a classmates birthday. It made me feel truly appreciated."</blockquote>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Images/best.jpg" alt="Classmates">
+            <div class="card-content">
+                <p>Classmates</p>
+                <blockquote>"This is my unexpected circle of friends."</blockquote>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Images/graduation.jpg" alt="Graduation">
+            <div class="card-content">
+                <p>Graduation</p>
+                <blockquote>"I’m thankful for my family and God for helping me complete senior high. I couldn’t have done it without them."</blockquote>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Images/mm.jpg" alt="Picnic">
+            <div class="card-content">
+                <p>Picnic</p>
+                <blockquote>"An unexpected trip to the countryside turned into an amazing day of food, laughter, and watched a horror movie."</blockquote>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Images/relapse.jpg" alt="Relapse">
+            <div class="card-content">
+                <p>Relapse</p>
+                <blockquote>"We went to KTV to sing away our broken hearts. It was a cathartic, fun experience that brought us closer."</blockquote>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="Images/love.jpg" alt="My Girls">
+            <div class="card-content">
+                <p>My Girls</p>
+                <blockquote>"These girls are my shoulder to cry on. I cherish every moment with them, and I’m so thankful for their support."</blockquote>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="content.html" class="back-button">Back to Main Page</a> <!-- Button link to main page -->
+    </footer>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

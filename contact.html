@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Global styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .logo-button img {
+            height: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-radius: 50px;
+        }
+        .logo-button img:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+        .nav-button {
+            margin: 0 10px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            padding: 8px 15px;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 6px;
+        }
+        .nav-button:hover,
+        .nav-button:active {
+            background-color: #333;
+            color: #fff;
+        }
+        /* Container styling */
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1000px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        /* Left section styling */
+        .left-section {
+            background-color: #fafafa;
+            padding: 15px;
+            width: 40%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            border-right: 2px solid #e0e0e0;
+            border-top: 5px solid #007bff; /* Blue top border */
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 20%;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .bio {
+            font-size: 0.9em;
+            color: #333;
+            line-height: 1.4;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+        }
+        .contact-item img {
+            width: 20px;
+            height: 20px;
+        }
+        /* Social media icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .social-icons a {
+            display: inline-block;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            transition: transform 0.3s;
+        }
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+        /* Right section styling */
+        .right-section {
+            width: 60%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .right-section h2 {
+            margin: 0;
+            color: #333;
+        }
+        .message-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .message-form input,
+        .message-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        .message-form textarea {
+            height: 100px;
+            resize: none;
+        }
+        .message-form button {
+            padding: 10px;
+            font-size: 1em;
+            background-color: #e60000;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .message-form button:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header with clickable logo and navigation links -->
+<header>
+    <a href="./index.html" class="logo-button">
+        <img src="./Images/logo.jpg" alt="Logo of Aicelle Apitan">
+    </a>
+    <nav>
+        <a href="./index.html" class="nav-button">Home</a>
+        <a href="./content.html" class="nav-button">Content</a>
+        <a href="contact.html" class="nav-button">Contact</a>
+    </nav>
+</header>
+
+
+<div class="container">
+    <div class="left-section">
+        <img src="./Images/ako.jpg" alt="Profile Image" class="profile-image">
+        <p class="bio">Hello! My name is Aicelle Apitan, and I’m beginning my journey as a first-year student in the College of Computer Studies (CCS).
+                         If you’d like to reach out, feel free to connect with me on social media below or send me a message.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <img src="./Images/address.jpeg" alt="Address Icon">
+                <span>0161 Gabuya St. Cogon Pardo, Cebu City </span>
+            </div>
+            <div class="contact-item">
+                <img src="./Images/call.webp" alt="Phone Icon">
+                <span>+63 961 029 3328</span>
+            </div>
+            <div class="contact-item">
+                <img src="./Images/gmail.png" alt="Email Icon">
+                <span>aicelleapitan@gmail.com</span>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/Aicelleapitan2" target="_blank">
+                <img src="./Images/facebook-icon-png-white-21.jpg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/celine_celz/profilecard/?igsh=MW9nM2R0Z3ZiZGJ1NA==" target="_blank">
+                <img src="./Images/OIP.jpeg" alt="Instagram">
+            </a>
+        </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+        <h2>Send a Message</h2>
+        <form class="message-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+

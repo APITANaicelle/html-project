@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies</title>
+    <link rel="shortcut icon" href="./Images/favicon.ico" type="image/x-icon">
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .image-wrapper {
+            width: 100%;
+            max-width: 250px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            cursor: pointer;
+            transition: box-shadow 0.3s ease;
+        }
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.3s ease;
+        }
+        .image-wrapper img.main {
+            opacity: 1;
+        }
+        .image-wrapper img.hover {
+            opacity: 0;
+        }
+        .image-wrapper:hover img.main {
+            opacity: 0;
+        }
+        .image-wrapper:hover img.hover {
+            opacity: 1;
+        }
+        .text-box {
+            background-color: #f9f9f9;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .text-box h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .description p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #666;
+            text-align: justify;
+        }
+        .button-container {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .button-container .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #e60000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 10px;
+        }
+        .button-container .button:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .image-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-wrapper {
+                max-width: 100%;
+            }
+        }
+        header {
+            width: 90%;
+            display: flex;
+            padding: 3px;
+        }
+        .logo {
+            position: absolute; 
+            top: 10px; 
+            left: 50px; 
+            height: 50px; 
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            padding: 10px;
+        }
+        .logo:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="./Images/logo.jpg" alt="Logo" class="logo"></a> 
+    </header>
+    <div class="container">
+        <div class="image-container">
+            <div class="image-wrapper">
+                <img class="main" src="Images/cooking1.jpeg" alt="cook picture">
+                <img class="hover" src="Images/cook2.jpg" alt="cook hover picture">
+            </div>
+            <div class="image-wrapper">
+                <img class="main" src="Images/cooking2.jpg" alt="cook picture">
+                <img class="hover" src="Images/cook1.jpg" alt="cook hover picture">
+            </div>
+            <div class="image-wrapper">
+                <img class="main" src="Images/cooking3.jpeg" alt="cook picture">
+                <img class="hover" src="Images/cook3.avif" alt="cook hover picture">
+            </div>
+        </div>
+        <div class="text-box">
+            <h1>Cooking</h1>
+            <div class="description">
+                <p>Cooking is another hobby I enjoy. Where I can experiment with different ingredients and flavors. I love trying out new recipes and seeing how they turn out.
+                     Cooking helps me relax. The best part is when the food is ready, and I can taste the result of my hard work. I also enjoy cooking for others. 
+                     Seeing my family or friends enjoy the food I've made gives me a lot of satisfaction. It's a way to show love and care. Cooking for someone is like giving them a piece of my heart on a plate.</p>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="button" onclick="location.href='third.html'">Back</button>
+            <button class="button" onclick="location.href='fifth.html'">Next</button>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
