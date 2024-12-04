@@ -12,73 +12,55 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: #000; 
-            color: #fff; 
+            background-color: #000;
+            color: #fff;
+            overflow: hidden; /* Prevent scrollbars */
         }
-        
+
         header {
-            width: 90%;
+            width: 100%;
             display: flex;
-            justify-content: flex-end; 
+            justify-content: flex-end;
             padding: 20px;
-            background-color: #000; 
-            box-sizing: border-box;
+            position: relative; /* Ensure positioning works */
+            z-index: 2; /* Keep above canvas */
         }
+
         .logo {
-            position: absolute; 
+            position: absolute;
             top: 10px;
-            left: 50px; 
-            height: 50px; 
+            left: 50px;
+            height: 50px;
             border-radius: 50px;
             cursor: pointer;
             transition: transform 0.3s;
             padding: 10px;
+            z-index: 2; /* Ensure it's above canvas */
         }
+
         .logo:hover {
-            transform: scale(1.1); /* Slightly enlarge the logo */  
+            transform: scale(1.1); /* Slightly enlarge the logo */
         }
+
         .nav-button {
+            right: 70px;
             margin: 0 10px;
             cursor: pointer;
             text-decoration: none;
-            color: #555;
+            color: #fff;
             font-weight: bold;
-            padding: 8px 15px; 
+            padding: 8px 15px;
             transition: background 0.3s, color 0.3s;
             border-radius: 6px;
-        }
-        .nav-button:hover,
-        .nav-button:active {
-            background-color: #333; 
-            color: #fff; 
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 2; /* Ensure above canvas */
         }
 
-        h1 {
-            margin: 80px 0 20px; 
+        .nav-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
-        .content-links {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .content-link {
-            text-decoration: none;
-            color: white; 
-            font-size: 1.2em;
-            margin: 15px 0;
-            padding: 10px 20px;
-            background-color: blue; 
-            border: 2px solid white; 
-            border-radius: 5px;
-            transition: background 0.3s, color 0.3s;
-        }
-
-        .content-link:hover {
-            background-color: #333; /* Darker color on hover */
-            color: #fff;
-        }
         .rounded {
             background: rgba(255, 255, 255, 0.2);
             color: inherit;
@@ -87,25 +69,126 @@
             text-align: center;
             font-size: 1.8em;
             margin: 17px;
+            z-index: 2; /* Keep text above canvas */
+            position: relative;
+        }
+
+        .content-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 2; /* Keep links above canvas */
+        }
+
+        .content-link {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            margin: 15px 0;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 255, 0.7);
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .content-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Canvas in background */
         }
     </style>
 </head>
 <body>
 
+<canvas id="starCanvas"></canvas>
+
 <header>
-    <a href="index.html"><img src="./Images/logo.jpg" alt="Logo" class="logo"></a> 
+    <a href="index.html"><img src="./Images/logo.jpg" alt="Logo" class="logo"></a>
     <a href="index.html" class="nav-button">Home</a>
     <a href="content.html" class="nav-button">Content</a>
     <a href="contact.html" class="nav-button">Contact</a>
 </header>
 
-<div class="rounded">Explore</div> 
+<div class="rounded">Explore</div>
 
 <div class="content-links">
     <a href="./first.html" class="content-link">Hobbies</a>
     <a href="experience.html" class="content-link">Experiences</a>
     <a href="reflection.html" class="content-link">Reflections</a>
 </div>
+
+<script>
+    const canvas = document.getElementById("starCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const stars = [];
+
+    class Star {
+        constructor(x, y, size, color, speed) {
+            this.x = x;
+            this.y = y;
+            this.size = size;
+            this.color = color;
+            this.speed = speed;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.shadowBlur = this.size * 2;
+            ctx.shadowColor = this.color;
+            ctx.fill();
+        }
+
+        update() {
+            this.y += this.speed;
+            if (this.y > canvas.height) this.y = 0; // Reset position when off screen
+        }
+    }
+
+    function createStars() {
+        for (let i = 0; i < 150; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            const size = Math.random() * 2 + 1;
+            const color = `rgba(255, 255, ${Math.random() * 255}, 0.8)`;
+            const speed = Math.random() * 0.5 + 0.2;
+            stars.push(new Star(x, y, size, color, speed));
+        }
+    }
+
+    function animateStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        stars.forEach((star) => {
+            star.update();
+            star.draw();
+        });
+        requestAnimationFrame(animateStars);
+    }
+
+    window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        stars.length = 0; // Clear stars
+        createStars();
+    });
+
+    createStars();
+    animateStars();
+</script>
 
 </body>
 </html>

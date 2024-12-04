@@ -118,11 +118,46 @@
         .logo:hover {
             transform: scale(1.1); 
         }
+        /* Right-side menu styles */
+        .side-menu {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            right: -250px;
+            transition: right 0.3s ease;
+            padding-top: 60px;
+        }
+        .side-menu a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color  0.3s ease;
+        }
+        .side-menu a:hover {
+            background-color: #575757;
+        }
+        /* Toggle button styles */
+        .menu-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5em;
+            color: #333;
+            background: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="./Images/logo.jpg" alt="Logo" class="logo"></a> 
+        <a href="index.html"><img src="./Images/logo.jpg" alt="Logo" class="logo"></a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button> <!-- Menu toggle button -->
     </header>
     <div class="container">
         <div class="image-container">
@@ -153,9 +188,25 @@
             <button class="button" onclick="location.href='second.html'">Next</button>
         </div>
     </div>
+
+    <!-- Side Menu -->
+    <div id="side-menu" class="side-menu">
+        <a href="./index.html">Home</a>
+        <a href="content.html">Content</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <script>
+        // Toggle menu function
+        function toggleMenu() {
+            const menu = document.getElementById('side-menu');
+            const currentRight = menu.style.right;
+            if (currentRight === '0px') {
+                menu.style.right = '-250px';  // Hide menu
+            } else {
+                menu.style.right = '0px';  // Show menu
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-
-
